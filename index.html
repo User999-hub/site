@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100809">
+  <meta name="description" content="Uma experiência feita para a Nação Rubro-Negra. História, títulos, ídolos, jogos e elenco 2026 do Flamengo.">
+  <title>Flamengo | A Paixão da Nação 🔴⚫</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--red:#e50924;--red-dark:#a90018;--black:#0b090a;--panel:#151214;--panel-2:#1e191c;--white:#fff;--muted:#b9afb3;--border:rgba(255,255,255,.09);--gold:#f5c86b;--radius:20px;--max:1180px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:85px}
+    body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+    body::selection{background:var(--red);color:white}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    img{display:block;max-width:100%}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#ff6476;font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .eyebrow::before{content:"";width:23px;height:3px;background:var(--red);border-radius:10px}
+    .section{padding:90px 0}
+    .section-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
+    .section-heading h2{margin-top:8px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.6rem,5vw,4.2rem);line-height:.98;text-transform:uppercase}
+    .section-heading p{max-width:460px;color:var(--muted);font-size:.94rem}
+    .accent{color:var(--red)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 22px;border:1px solid transparent;border-radius:10px;background:var(--red);color:white;font-weight:800;font-size:.88rem;transition:transform .2s,background .2s}
+    .btn:hover{background:#ff203b;transform:translateY(-2px)}
+    .btn-outline{background:rgba(0,0,0,.28);border-color:rgba(255,255,255,.3)}
+    .btn-outline:hover{background:rgba(255,255,255,.1);border-color:white}
+    .topbar{position:sticky;z-index:100;top:0;background:rgba(11,9,10,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .crest{display:grid;place-items:center;width:45px;height:45px;border-radius:12px;background:linear-gradient(145deg,#ed1935,#970015);color:white;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:900;border:1px solid rgba(255,255,255,.2);box-shadow:0 5px 25px rgba(229,9,36,.25)}
+    .brand-name{display:block;font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:900;line-height:1;letter-spacing:.5px}
+    .brand-sub{display:block;margin-top:5px;color:var(--muted);font-size:.61rem;letter-spacing:1.7px}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{color:#ded6d9;font-size:.83rem;font-weight:600}
+    .nav-links a:hover{color:white}
+    .menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--border);background:var(--panel);color:white;border-radius:10px;font-size:1.3rem}
+    .hero{position:relative;min-height:660px;min-height:min(780px,calc(100svh - 76px));display:flex;align-items:center;overflow:hidden;background:#17090c}
+    .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;opacity:.65}
+    .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,5,6,.98) 0%,rgba(8,5,6,.83) 39%,rgba(8,5,6,.28) 100%),linear-gradient(0deg,var(--black),transparent 35%),linear-gradient(180deg,rgba(0,0,0,.25),transparent 25%)}
+    .hero-content{position:relative;z-index:2;padding-top:60px;padding-bottom:90px}
+    .hero-label{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;background:rgba(229,9,36,.14);border:1px solid rgba(255,80,100,.38);border-radius:5px;color:#ffbac3;font-size:.72rem;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+    .live-dot{width:8px;height:8px;background:var(--red);border-radius:50%;box-shadow:0 0 12px var(--red)}
+    .hero h1{max-width:790px;margin:25px 0 20px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(4.4rem,10.5vw,9rem);font-weight:900;line-height:.79;letter-spacing:-2px;text-transform:uppercase}
+    .hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px white}
+    .hero h1 .red{color:var(--red)}
+    .hero-description{max-width:510px;color:#e0d9dc;font-size:1rem;line-height:1.8}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+    .hero-foot{display:flex;align-items:center;gap:18px;margin-top:48px}
+    .hero-foot-line{width:45px;height:2px;background:var(--red)}
+    .hero-foot p{color:#d0c7cb;font-size:.77rem;letter-spacing:1.1px}
+    .stats{position:relative;z-index:3;margin-top:-1px;background:#110e10;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:30px 20px;text-align:center;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:0}
+    .stat strong{display:block;color:white;font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,3.7rem);font-weight:900;line-height:1}
+    .stat strong span{color:var(--red)}
+    .stat p{margin-top:9px;color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase}
+    .cards-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .trophy-card{position:relative;min-height:255px;padding:27px;overflow:hidden;background:linear-gradient(145deg,#20191c,#110e10);border:1px solid var(--border);border-radius:var(--radius);transition:transform .25s,border-color .25s}
+    .trophy-card:hover{transform:translateY(-5px);border-color:rgba(229,9,36,.6)}
+    .trophy-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:rgba(229,9,36,.12);border:1px solid rgba(229,9,36,.2);font-size:1.6rem}
+    .trophy-card h3{margin-top:26px;font-family:'Barlow Condensed',sans-serif;font-size:2rem;line-height:1;text-transform:uppercase}
+    .trophy-card p{margin-top:10px;color:var(--muted);font-size:.86rem}
+    .trophy-card .years{display:block;margin-top:16px;color:var(--gold);font-size:.77rem;font-weight:700}
+    .dark-section{background:#100d0f;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .history-layout{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .history-photo{position:relative;min-height:440px;overflow:hidden;border-radius:24px;background:#21191c;border:1px solid var(--border)}
+    .history-photo img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}
+    .photo-caption{position:absolute;inset:auto 0 0;padding:50px 24px 23px;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+    .photo-caption strong{font-family:'Barlow Condensed',sans-serif;font-size:2rem;text-transform:uppercase}
+    .photo-caption p{color:#e0d8dc;font-size:.82rem}
+    .history-copy h2{margin:13px 0 18px;font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,5vw,4.5rem);line-height:.94;text-transform:uppercase}
+    .history-copy > p{color:var(--muted);font-size:.93rem;line-height:1.9}
+    .timeline{margin-top:30px;padding-left:25px;border-left:2px solid #3c242b}
+    .timeline-item{position:relative;padding:0 0 25px 7px}
+    .timeline-item:last-child{padding-bottom:0}
+    .timeline-item::before{content:"";position:absolute;top:7px;left:-33px;width:12px;height:12px;background:var(--red);border:3px solid #100d0f;border-radius:50%;box-shadow:0 0 0 1px var(--red)}
+    .timeline-item strong{color:white;font-size:.94rem}
+    .timeline-item p{margin-top:4px;color:var(--muted);font-size:.83rem}
+    .legends-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .legend-card{overflow:hidden;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);transition:transform .25s,border-color .25s}
+    .legend-card:hover{transform:translateY(-5px);border-color:rgba(229,9,36,.6)}
+    .legend-image{height:235px;overflow:hidden;background:#26191e}
+    .legend-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+    .legend-card:hover .legend-image img{transform:scale(1.06)}
+    .legend-info{padding:21px}
+    .legend-info .role{color:#ff6476;font-size:.69rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+    .legend-info h3{margin-top:7px;font-family:'Barlow Condensed',sans-serif;font-size:2rem;line-height:1;text-transform:uppercase}
+    .legend-info p{margin-top:12px;color:var(--muted);font-size:.84rem;line-height:1.8}
+    .nation-banner{position:relative;min-height:350px;display:flex;align-items:center;overflow:hidden;background:#1b0b10;border-radius:24px;border:1px solid var(--border)}
+    .nation-banner > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+    .nation-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,5,7,.96),rgba(10,5,7,.25))}
+    .nation-copy{position:relative;z-index:1;max-width:690px;padding:clamp(25px,5vw,55px)}
+    .nation-copy h2{margin:12px 0;font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,5.5rem);line-height:.9;text-transform:uppercase}
+    .nation-copy p{max-width:550px;color:#e4dade;font-size:.94rem}
+    .chant{margin-top:22px;padding:16px 20px;background:rgba(229,9,36,.14);border-left:3px solid var(--red);color:white;font-weight:700}
+    .quiz-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px}
+    .quiz-intro,.quiz-box,.wall-box{padding:30px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius)}
+    .quiz-intro h3,.wall-box h3{margin:13px 0;font-family:'Barlow Condensed',sans-serif;font-size:2.6rem;line-height:1;text-transform:uppercase}
+    .quiz-intro p,.wall-box > p{color:var(--muted);font-size:.88rem}
+    .quiz-number{display:inline-block;margin-bottom:15px;color:#ff6476;font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+    .quiz-box h3{margin-bottom:22px;font-size:1.15rem;line-height:1.5}
+    .answers{display:grid;gap:10px}
+    .answer{padding:13px 15px;border:1px solid #3b3035;border-radius:10px;background:#201a1d;color:#f3edf0;text-align:left;transition:background .2s,border-color .2s}
+    .answer:hover:not(:disabled){background:#352027;border-color:var(--red)}
+    .answer:disabled{cursor:default;opacity:.85}
+    .answer.correct{background:#123d28;border-color:#2eaa68}
+    .answer.wrong{background:#481b24;border-color:#e34c60}
+    .quiz-feedback{min-height:28px;margin-top:17px;font-size:.86rem;font-weight:700}
+    .quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:20px}
+    .quiz-progress{color:var(--muted);font-size:.78rem}
+    .quiz-score{color:var(--gold);font-weight:800}
+    .wall-box{margin-top:24px}
+    .wall-form{display:grid;grid-template-columns:1fr 2fr auto;gap:10px;margin-top:20px}
+    .field{width:100%;min-width:0;padding:13px 14px;color:white;background:#0e0b0d;border:1px solid #3b3035;border-radius:10px;outline:none}
+    .field:focus{border-color:var(--red)}
+    .field::placeholder{color:#95878d}
+    .wall-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+    .wall-message{padding:17px;background:#201a1d;border:1px solid var(--border);border-radius:13px;overflow-wrap:anywhere}
+    .wall-message strong{color:#ff7888;font-size:.86rem}
+    .wall-message p{margin-top:6px;color:#eee5e9;font-size:.86rem}
+    .wall-note{margin-top:15px;color:#968b90;font-size:.73rem}
+    footer{padding:40px 0 25px;background:#080607;border-top:1px solid var(--border)}
+    .footer-main{display:flex;align-items:center;justify-content:space-between;gap:25px;padding-bottom:28px}
+    .footer-quote{max-width:430px;color:var(--muted);font-size:.82rem}
+    .footer-links{display:flex;flex-wrap:wrap;gap:20px;color:#d1c6cb;font-size:.8rem}
+    .footer-bottom{padding-top:22px;border-top:1px solid var(--border);color:#887c82;font-size:.72rem;text-align:center}
+    .back-top{position:fixed;z-index:50;right:20px;bottom:20px;display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:var(--red);color:white;font-size:1.3rem;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .2s,transform .2s}
+    .back-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .toast{position:fixed;z-index:200;left:50%;bottom:25px;width:max-content;max-width:calc(100% - 30px);padding:13px 18px;background:#241b20;border:1px solid #5a313b;border-radius:12px;color:white;font-size:.85rem;box-shadow:0 10px 40px rgba(0,0,0,.35);opacity:0;pointer-events:none;transform:translate(-50%,10px);transition:.2s}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .jogo-card{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#151214;border:1px solid rgba(255,255,255,.09);padding:18px;border-radius:16px;flex-wrap:wrap}
+    .jogo-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;line-height:1.1;text-transform:uppercase}
+    @media(max-width:900px){.nav-links{gap:12px}.nav-links a{font-size:.76rem}.history-layout{gap:30px}.cards-grid,.legends-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quiz-layout{grid-template-columns:1fr}.wall-form{grid-template-columns:1fr 1fr}.wall-form button{grid-column:1/-1}}
+    @media(max-width:680px){.container{width:calc(100% - 30px)}.section{padding:64px 0}.section-heading{display:block}.section-heading p{margin-top:15px}.nav{min-height:68px}.menu-toggle{display:block}.nav-links{position:absolute;top:calc(100% + 1px);left:0;right:0;display:none;align-items:stretch;gap:0;padding:10px 15px 16px;background:#100d0f;border-bottom:1px solid var(--border)}.nav-links.open{display:flex;flex-direction:column}.nav-links a{padding:13px 10px;border-bottom:1px solid var(--border);font-size:.9rem}.hero{min-height:650px;min-height:78svh}.hero-image{object-position:57% center}.hero-content{padding-top:55px;padding-bottom:65px}.hero h1{font-size:clamp(4rem,17vw,6.6rem);letter-spacing:-1px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat{padding:23px 10px;border-bottom:1px solid var(--border)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.cards-grid,.legends-grid{grid-template-columns:1fr}.history-layout{grid-template-columns:1fr}.history-photo{min-height:320px}.quiz-intro,.quiz-box,.wall-box{padding:22px}.wall-form{grid-template-columns:1fr}.wall-list{grid-template-columns:1fr}.footer-main{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio"><div class="crest">CRF</div><div><span class="brand-name">FLAMENGO</span><span class="brand-sub">CLUBE DE REGATAS • 1895</span></div></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a><a href="#titulos">Títulos</a><a href="#historia">História</a><a href="#idolos">Ídolos</a><a href="#jogos">Jogos</a><a href="#elenco">Elenco 2026</a><a href="#nacao">A Nação</a><a href="#quiz">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <img class="hero-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Torcida_do_Flamengo_no_Maracan%C3%A3.jpg/1920px-Torcida_do_Flamengo_no_Maracan%C3%A3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=85'" alt="Torcida do Flamengo no Maracanã com bandeirão rubro-negro" fetchpriority="high">
+      <div class="container hero-content">
+        <div class="hero-label"><span class="live-dot"></span> Desde 17 de novembro de 1895</div>
+        <h1>UMA<br><span class="outline">PAIXÃO</span><br><span class="red">ETERNA.</span></h1>
+        <p class="hero-description">Mais do que um clube. Uma história escrita com raça, tradição e milhões de corações. Vermelho e preto no peito, Flamengo na alma.</p>
+        <div class="hero-actions"><a class="btn" href="#titulos">🏆 Explorar conquistas</a><a class="btn btn-outline" href="#jogos">📅 Próximos jogos ↗</a></div>
+        <div class="hero-foot"><span class="hero-foot-line"></span><p>RAÇA • AMOR • PAIXÃO</p></div>
+      </div>
+    </section>
+    <section class="stats"><div class="container stats-grid"><div class="stat"><strong>18<span>95</span></strong><p>Ano de fundação</p></div><div class="stat"><strong>4<span>×</span></strong><p>Libertadores</p></div><div class="stat"><strong>9<span>×</span></strong><p>Brasileirão*</p></div><div class="stat"><strong>40<span>×</span></strong><p>Campeonato Carioca</p></div></div></section>
+
+    <section class="section" id="titulos"><div class="container"><div class="section-heading"><div><span class="eyebrow">Uma galeria de glórias</span><h2>UMA HISTÓRIA<br>DE <span class="accent">CAMPEÃO.</span></h2></div><p>De conquistas continentais a decisões inesquecíveis, cada taça carrega um capítulo da paixão rubro-negra.</p></div>
+      <div class="cards-grid">
+        <article class="trophy-card"><div class="trophy-icon">🌎</div><h3>Mundial</h3><p>A conquista internacional que marcou uma geração inteira.</p><span class="years">1981 • Copa Intercontinental</span></article>
+        <article class="trophy-card"><div class="trophy-icon">🏆</div><h3>Libertadores</h3><p>Quatro vezes campeão da América e primeiro brasileiro a chegar ao tetra.</p><span class="years">1981 • 2019 • 2022 • 2025</span></article>
+        <article class="trophy-card"><div class="trophy-icon">🇧🇷</div><h3>Brasileirão</h3><p>Uma trajetória de títulos nacionais e campanhas memoráveis.</p><span class="years">9 títulos reconhecidos pelo clube*</span></article>
+        <article class="trophy-card"><div class="trophy-icon">🥇</div><h3>Copa do Brasil</h3><p>Decisões intensas, mata-matas históricos e festa da Nação.</p><span class="years">1990 • 2006 • 2013 • 2022 • 2024</span></article>
+        <article class="trophy-card"><div class="trophy-icon">🔥</div><h3>Supercopa</h3><p>O Flamengo também começou temporadas levantando taças.</p><span class="years">2020 • 2021 • 2025</span></article>
+        <article class="trophy-card"><div class="trophy-icon">🏟️</div><h3>Campeonato Carioca</h3><p>O gigante do Rio chegou à marca histórica de 40 conquistas.</p><span class="years">40 títulos até 2026</span></article>
+      </div>
+      <p style="margin-top:18px;color:#a99da2;font-size:.76rem">*A lista nacional considera o título de 1987 reconhecido pelo Flamengo.</p>
+      <div style="margin-top:24px"><a class="btn btn-outline" href="https://www.flamengo.com.br/clube/titulos" target="_blank" rel="noopener noreferrer">Ver galeria oficial de títulos ↗</a></div>
+    </div></section>
+
+    <section class="section dark-section" id="historia"><div class="container history-layout">
+      <div class="history-photo"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=80" alt="Estádio do Maracanã" loading="lazy"><div class="photo-caption"><strong>O Maraca é nosso palco.</strong><p>Um dos grandes cenários da história do futebol brasileiro.</p></div></div>
+      <div class="history-copy"><span class="eyebrow">Desde 1895</span><h2>O NASCIMENTO<br>DE UMA <span class="accent">NAÇÃO.</span></h2><p>O Clube de Regatas do Flamengo nasceu no Rio de Janeiro como um clube de remo. Em 1911, começou a trajetória de sua equipe de futebol. O que veio depois ultrapassou as fronteiras do esporte: uma identidade que reúne gerações em torno das cores vermelho e preto.</p>
+        <div class="timeline">
+          <div class="timeline-item"><strong>1895 — O começo</strong><p>Fundação do clube em 17 de novembro, com o remo como modalidade inicial.</p></div>
+          <div class="timeline-item"><strong>1911 — A chegada do futebol</strong><p>O futebol passa a fazer parte da história rubro-negra.</p></div>
+          <div class="timeline-item"><strong>1981 — A glória eterna</strong><p>Com Zico como grande referência, o Flamengo conquista a Libertadores e a Copa Intercontinental.</p></div>
+          <div class="timeline-item"><strong>2019 — Uma temporada inesquecível</strong><p>O time conquista a Libertadores e o Campeonato Brasileiro.</p></div>
+          <div class="timeline-item"><strong>2022 — Mais uma América</strong><p>O clube levanta novamente a Libertadores e a Copa do Brasil.</p></div>
+          <div class="timeline-item"><strong>2025 — O tetra continental</strong><p>Vitória por 1 a 0 sobre o Palmeiras na final da Libertadores, em Lima.</p></div>
+          <div class="timeline-item"><strong>2026 — Quarenta vezes Carioca</strong><p>O Flamengo conquista seu 40º Campeonato Carioca.</p></div>
+        </div>
+      </div>
+    </div></section>
+
+    <section class="section" id="idolos"><div class="container"><div class="section-heading"><div><span class="eyebrow">Lendas que fizeram história</span><h2>ETERNO<span class="accent">S ÍDOLOS.</span></h2></div><p>Jogadores que marcaram gerações, decidiram partidas e conquistaram um lugar especial no coração da torcida.</p></div>
+      <div class="legends-grid">
+        <article class="legend-card"><div class="legend-image"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Zico_1981.jpg" onerror="this.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80'" alt="Zico" loading="lazy"></div><div class="legend-info"><span class="role">O Galinho de Quintino</span><h3>Zico</h3><p>Símbolo da geração de 1981, maestro dentro de campo e um dos maiores ídolos da história rubro-negra.</p></div></article>
+        <article class="legend-card"><div class="legend-image"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80" alt="Estádio" loading="lazy"></div><div class="legend-info"><span class="role">O camisa 10 uruguaio</span><h3>Arrascaeta</h3><p>Criatividade, visão de jogo e participações decisivas em grandes conquistas da era recente.</p></div></article>
+        <article class="legend-card"><div class="legend-image"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80" alt="Campo" loading="lazy"></div><div class="legend-info"><span class="role">Herói de decisões</span><h3>Gabigol</h3><p>Marcou dois gols na final da Libertadores de 2019 e entrou para a memória de uma geração.</p></div></article>
+        <article class="legend-card"><div class="legend-image"><img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80" alt="Partida" loading="lazy"></div><div class="legend-info"><span class="role">Velocidade e intensidade</span><h3>Bruno Henrique</h3><p>Um dos nomes marcantes das grandes conquistas recentes, decisivo em jogos importantes e clássicos.</p></div></article>
+        <article class="legend-card"><div class="legend-image"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80" alt="Bola" loading="lazy"></div><div class="legend-info"><span class="role">Artilharia e presença de área</span><h3>Pedro</h3><p>Centroavante de grande técnica, conhecido pela finalização e pela capacidade de decidir partidas.</p></div></article>
+        <article class="legend-card"><div class="legend-image"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80" alt="Maracanã" loading="lazy"></div><div class="legend-info"><span class="role">A geração de 1981</span><h3>Júnior e Adílio</h3><p>Parte de uma geração histórica que ajudou a transformar o Flamengo em potência do futebol mundial.</p></div></article>
+      </div>
+      <p style="margin-top:18px;color:#958990;font-size:.76rem">Observação: algumas imagens são fotografias ilustrativas de futebol, não retratos dos jogadores.</p>
+    </div></section>
+
+    <!-- PRÓXIMOS JOGOS - NOVO -->
+    <section class="section" id="jogos"><div class="container">
+      <div class="section-heading"><div><span class="eyebrow">Agenda rubro-negra • Atualizado Out/2026</span><h2>PRÓXIMOS <span class="accent">JOGOS.</span></h2></div><p>Reta final do Brasileirão 2026. Filtra por competição e já deixa o lembrete ligado.</p></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+        <button class="btn" onclick="filtrarJogo('todos',this)">Todos</button>
+        <button class="btn btn-outline" onclick="filtrarJogo('brasileirao',this)">🇧🇷 Brasileirão</button>
+        <button class="btn btn-outline" onclick="filtrarJogo('libertadores',this)">🏆 Libertadores</button>
+      </div>
+      <div id="listaJogos" style="display:grid;gap:12px"></div>
+      <p style="margin-top:12px;color:#a99da2;font-size:.76rem">*Horários de Brasília. Datas podem mudar por causa da TV.</p>
+    </div></section>
+
+    <!-- ELENCO 2026 - NOVO -->
+    <section class="section dark-section" id="elenco"><div class="container">
+      <div class="section-heading"><div><span class="eyebrow">Técnico: Leonardo Jardim • Maracanã</span><h2>ELENCO <span class="accent">2026.</span></h2></div><p>Clica numa posição pra filtrar. Clica no jogador pra ver a curiosidade dele.</p></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+        <button class="btn" onclick="filtrarElenco('todos',this)">Todos</button>
+        <button class="btn btn-outline" onclick="filtrarElenco('gol',this)">🧤 Goleiros</button>
+        <button class="btn btn-outline" onclick="filtrarElenco('def',this)">🛡️ Defesa</button>
+        <button class="btn btn-outline" onclick="filtrarElenco('mei',this)">🎯 Meio</button>
+        <button class="btn btn-outline" onclick="filtrarElenco('ata',this)">⚽ Ataque</button>
+      </div>
+      <div class="legends-grid" id="listaElenco"></div>
+    </div></section>
+
+    <section class="section dark-section" id="nacao"><div class="container"><div class="nation-banner">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Torcida_do_Flamengo_no_Maracan%C3%A3.jpg/1920px-Torcida_do_Flamengo_no_Maracan%C3%A3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85'" alt="Torcida do Flamengo no Maracanã" loading="lazy">
+      <div class="nation-copy"><span class="eyebrow">Uma paixão sem fronteiras</span><h2>NINGUÉM EXPLICA.<br><span class="accent">SÓ QUEM É.</span></h2><p>Em qualquer canto do Brasil, sempre existe uma camisa rubro-negra, uma família reunida e uma voz pronta para cantar pelo Mengão.</p><div class="chant">🔴⚫ UMA VEZ FLAMENGO, SEMPRE FLAMENGO!</div><div class="hero-actions"><button class="btn" id="chantButton" type="button">📣 Soltar o grito</button><button class="btn btn-outline" id="shareButton" type="button">↗ Compartilhar página</button></div><p id="chantOutput" style="margin-top:15px;font-weight:800;color:white"></p></div>
+    </div></div></section>
+
+    <section class="section" id="quiz"><div class="container"><div class="section-heading"><div><span class="eyebrow">Teste seu conhecimento</span><h2>VOCÊ É <span class="accent">MENGÃO?</span></h2></div><p>Responda às perguntas sobre a história do Flamengo, some pontos e descubra quanto você conhece do Mais Querido.</p></div>
+      <div class="quiz-layout">
+        <div class="quiz-intro"><span class="eyebrow">Desafio rubro-negro</span><h3>É HORA DE MOSTRAR QUE VOCÊ SABE!</h3><p>São cinco perguntas sobre momentos históricos, títulos e ídolos. Boa sorte, Nação!</p><div style="margin-top:24px;padding:20px;background:#201a1d;border-radius:14px"><p style="font-size:.72rem;letter-spacing:1px;font-weight:800">SUA PONTUAÇÃO</p><p id="scoreDisplay" class="quiz-score" style="font-size:2.8rem;font-family:'Barlow Condensed',sans-serif">0 / 5</p><p id="scoreMessage" style="margin-top:5px;font-size:.8rem">Vamos começar?</p></div></div>
+        <div class="quiz-box"><span class="quiz-number" id="questionNumber">PERGUNTA 1 DE 5</span><h3 id="questionText"></h3><div class="answers" id="answers"></div><p class="quiz-feedback" id="quizFeedback"></p><div class="quiz-footer"><span class="quiz-progress" id="quizProgress">0 perguntas respondidas</span><button class="btn" id="nextQuestion" type="button" disabled>Próxima →</button></div></div>
+      </div>
+      <div class="wall-box"><span class="eyebrow">Voz da torcida</span><h3>DEIXE SEU GRITO NO MURAL.</h3><p>Escreva uma mensagem para demonstrar seu amor pelo Flamengo. Ela será exibida neste navegador.</p><form class="wall-form" id="wallForm"><label class="sr-only" for="fanName">Seu nome</label><input class="field" id="fanName" maxlength="35" placeholder="Seu nome ou apelido" required><label class="sr-only" for="fanMessage">Sua mensagem</label><input class="field" id="fanMessage" maxlength="180" placeholder="Ex.: Mengão é minha paixão!" required><button class="btn" type="submit">Publicar 🔴⚫</button></form><div class="wall-list" id="wallList"></div><p class="wall-note">As mensagens ficam salvas somente neste navegador.</p></div>
+    </div></section>
+  </main>
+  <footer><div class="container"><div class="footer-main"><a class="brand" href="#inicio"><div class="crest">CRF</div><div><span class="brand-name">FLAMENGO</span><span class="brand-sub">RAÇA • AMOR • PAIXÃO</span></div></a><p class="footer-quote">Um projeto de torcedor para torcedores. A história é gigante. A paixão, eterna.</p><div class="footer-links"><a href="https://www.flamengo.com.br/" target="_blank" rel="noopener noreferrer">Site oficial ↗</a><a href="#inicio">Voltar ao início ↑</a></div></div><div class="footer-bottom"><p>Feito com ❤️ 🔴⚫ para a Nação Rubro-Negra.</p><p style="margin-top:6px">Projeto independente de fã, sem vínculo oficial com o Clube de Regatas do Flamengo.</p><p style="margin-top:6px">© <span id="currentYear">2026</span> • Paixão que atravessa gerações.</p></div></div></footer>
+  <button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button><div class="toast" id="toast" role="status"></div>
+  <script>
+    const menuToggle=document.getElementById('menuToggle');const navLinks=document.getElementById('navLinks');
+    menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.textContent=open?'✕':'☰'});
+    navLinks.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.textContent='☰'}));
+    const chants=['🔴⚫ MENGÃO! MENGÃO! MENGÃO!','🔥 VAMOS, FLAMENGO!','🏆 A NAÇÃO NÃO PARA DE CANTAR!','❤️ UMA VEZ FLAMENGO, SEMPRE FLAMENGO!','⚫🔴 RUBRO-NEGRO ATÉ O FIM!'];
+    document.getElementById('chantButton').addEventListener('click',()=>{document.getElementById('chantOutput').textContent=chants[Math.floor(Math.random()*chants.length)]});
+    document.getElementById('shareButton').addEventListener('click',async()=>{try{if(navigator.share){await navigator.share({title:'Flamengo — A Paixão da Nação',text:'Confira este site feito para a Nação Rubro-Negra!',url:window.location.href})}else{await navigator.clipboard.writeText(window.location.href);showToast('Link copiado!')}}catch(e){showToast('Copie o endereço pela barra do navegador.')}});
+
+    // ===== PRÓXIMOS JOGOS 2026 =====
+    const jogos=[
+      {data:'29/10 • QUI • 20h',jogo:'Vasco x Flamengo',comp:'brasileirao',local:'São Januário • 33ª Rodada',tag:'🇧🇷 BRASILEIRÃO'},
+      {data:'04/11 • QUA • 19h30',jogo:'Flamengo x Grêmio',comp:'brasileirao',local:'Maracanã • 34ª Rodada',tag:'🇧🇷 BRASILEIRÃO'},
+      {data:'18/11 • QUA • 15h',jogo:'Flamengo x Athletico-PR',comp:'brasileirao',local:'Maracanã • 35ª Rodada',tag:'🇧🇷 BRASILEIRÃO'},
+      {data:'21/11 • SÁB',jogo:'Palmeiras x Flamengo',comp:'brasileirao',local:'Allianz Parque • Clássico nacional',tag:'🇧🇷 BRASILEIRÃO'},
+      {data:'28/11 • SÁB',jogo:'Coritiba x Flamengo',comp:'brasileirao',local:'Couto Pereira • Fora de casa',tag:'🇧🇷 BRASILEIRÃO'},
+      {data:'02/12 • QUA',jogo:'Flamengo x Chapecoense',comp:'brasileirao',local:'Maracanã • Última rodada',tag:'🇧🇷 BRASILEIRÃO'},
+    ];
+    function renderJogos(filtro='todos'){
+      const el=document.getElementById('listaJogos');el.innerHTML='';
+      jogos.filter(j=>filtro==='todos'||j.comp===filtro).forEach(j=>{
+        el.innerHTML+=`<div class="jogo-card"><div><span style="color:#ff6476;font-weight:800;font-size:.75rem">${j.tag} • ${j.data}</span><h3>${j.jogo}</h3><p style="color:#b9afb3;font-size:.85rem">${j.local}</p></div><button class="btn" onclick="showToast('Lembrete ligado! 🔴⚫ ${j.jogo}')">🔔 Lembrar</button></div>`;
+      });
+      if(el.innerHTML==='') el.innerHTML='<p style="color:#b9afb3">Sem jogo dessa competição na reta final.</p>';
+    }
+    function filtrarJogo(f,btn){document.querySelectorAll('#jogos .btn').forEach(b=>b.classList.add('btn-outline'));btn.classList.remove('btn-outline');renderJogos(f)}
+    renderJogos();
+
+    // ===== ELENCO 2026 =====
+    const elenco=[
+      {nome:'Agustín Rossi',pos:'gol',num:'1',desc:'Goleiro titular. Paredão nos pênaltis.'},
+      {nome:'Varela',pos:'def',num:'2',desc:'Lateral direito uruguaio. Muita raça.'},
+      {nome:'Léo Ortiz',pos:'def',num:'3',desc:'Zagueiro. Saída de bola e gol de cabeça.'},
+      {nome:'Léo Pereira',pos:'def',num:'4',desc:'Zagueiro canhoto. Xerife da zaga.'},
+      {nome:'Alex Sandro',pos:'def',num:'26',desc:'Lateral esquerdo. Experiência de Juventus e Seleção.'},
+      {nome:'Ayrton Lucas',pos:'def',num:'6',desc:'Lateral esquerdo. Velocidade pura.'},
+      {nome:'Vitão',pos:'def',num:'44',desc:'Zagueiro reforço de 2026, ex-Inter.'},
+      {nome:'Erick Pulgar',pos:'mei',num:'5',desc:'Volante chileno. Rouba bola e distribui.'},
+      {nome:'Jorginho',pos:'mei',num:'21',desc:'Volante. Cérebro do time, ex-Arsenal e Chelsea.'},
+      {nome:'De La Cruz',pos:'mei',num:'18',desc:'Meia uruguaio. Intensidade total.'},
+      {nome:'Lucas Paquetá',pos:'mei',num:'11',desc:'Meia. Criação e drible, cria de Xerém.'},
+      {nome:'Arrascaeta',pos:'mei',num:'10',desc:'Camisa 10. Gênio, passe que ninguém vê.'},
+      {nome:'Carrascal',pos:'mei',num:'15',desc:'Meia colombiano. Drible curto e visão.'},
+      {nome:'Samuel Lino',pos:'ata',num:'16',desc:'Ponta esquerda. Velocidade e gol.'},
+      {nome:'Gonzalo Plata',pos:'ata',num:'19',desc:'Ponta equatoriano. Drible e decisão.'},
+      {nome:'Luiz Araújo',pos:'ata',num:'7',desc:'Ponta direito. Chute forte e assistência.'},
+      {nome:'Bruno Henrique',pos:'ata',num:'27',desc:'Rei dos clássicos. BH27.'},
+      {nome:'Pedro',pos:'ata',num:'9',desc:'Centroavante. Artilheiro, gol de todo jeito.'},
+    ];
+    function renderElenco(filtro='todos'){
+      const el=document.getElementById('listaElenco');el.innerHTML='';
+      elenco.filter(j=>filtro==='todos'||j.pos===filtro).forEach(j=>{
+        const card=document.createElement('article');card.className='legend-card';card.style.cursor='pointer';
+        card.innerHTML=`<div style="padding:20px;text-align:center;background:linear-gradient(145deg,#2a141a,#110e10)"><div style="font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:#e50924;line-height:1">${j.num}</div><div style="color:#ff6476;font-size:.7rem;font-weight:800;letter-spacing:1px">${j.pos==='gol'?'GOLEIRO':j.pos==='def'?'DEFESA':j.pos==='mei'?'MEIO-CAMPO':'ATAQUE'}</div></div><div class="legend-info"><h3>${j.nome}</h3><p>${j.desc}</p></div>`;
+        card.onclick=()=>showToast('🔴⚫ '+j.nome+' - '+j.desc);el.appendChild(card);
+      });
+    }
+    function filtrarElenco(f,btn){document.querySelectorAll('#elenco .btn').forEach(b=>b.classList.add('btn-outline'));btn.classList.remove('btn-outline');renderElenco(f)}
+    renderElenco();
+
+    // ===== QUIZ =====
+    const questions=[
+      {question:'Em que ano o Flamengo conquistou sua primeira Libertadores?',answers:['1978','1981','1987','1992'],correct:1,explanation:'Foi em 1981, na campanha histórica liderada por Zico.'},
+      {question:'Contra qual clube o Flamengo venceu a final da Libertadores de 2019?',answers:['Boca Juniors','River Plate','Palmeiras','Grêmio'],correct:1,explanation:'O Flamengo venceu o River Plate por 2 a 1, com dois gols de Gabigol.'},
+      {question:'Qual é o apelido mais conhecido de Zico?',answers:['Rei do Maracanã','Imperador','Galinho de Quintino','Maestro'],correct:2,explanation:'Zico ficou conhecido como o Galinho de Quintino.'},
+      {question:'Em que ano o Flamengo conquistou o tetracampeonato da Libertadores?',answers:['2019','2020','2022','2025'],correct:3,explanation:'Em 2025, o Flamengo venceu o Palmeiras por 1 a 0 na final.'},
+      {question:'Quantos títulos do Campeonato Carioca o Flamengo alcançou em 2026?',answers:['35','38','39','40'],correct:3,explanation:'Em 2026, o Flamengo conquistou seu 40º Campeonato Carioca.'}
+    ];
+    let questionIndex=0,score=0,answered=false;
+    const questionNumber=document.getElementById('questionNumber'),questionText=document.getElementById('questionText'),answersContainer=document.getElementById('answers'),quizFeedback=document.getElementById('quizFeedback'),nextQuestion=document.getElementById('nextQuestion'),quizProgress=document.getElementById('quizProgress'),scoreDisplay=document.getElementById('scoreDisplay'),scoreMessage=document.getElementById('scoreMessage');
+    function renderQuestion(){const item=questions[questionIndex];answered=false;questionNumber.textContent=`PERGUNTA ${questionIndex+1} DE ${questions.length}`;questionText.textContent=item.question;quizFeedback.textContent='';answersContainer.replaceChildren();item.answers.forEach((a,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.textContent=`${String.fromCharCode(65+i)}) ${a}`;b.addEventListener('click',()=>chooseAnswer(i,b));answersContainer.appendChild(b)});nextQuestion.disabled=true;nextQuestion.textContent=questionIndex===questions.length-1?'Ver resultado →':'Próxima →';updateScore()}
+    function chooseAnswer(sel,btn){if(answered)return;answered=true;const item=questions[questionIndex];const btns=[...answersContainer.querySelectorAll('button')];btns.forEach(b=>b.disabled=true);if(sel===item.correct){score++;btn.classList.add('correct');quizFeedback.textContent='Acertou! '+item.explanation;quizFeedback.style.color='#70e3a0'}else{btn.classList.add('wrong');btns[item.correct].classList.add('correct');quizFeedback.textContent='Quase! '+item.explanation;quizFeedback.style.color='#ff9ba8'}quizProgress.textContent=`${questionIndex+1} de ${questions.length} respondidas`;updateScore();nextQuestion.disabled=false}
+    function updateScore(){scoreDisplay.textContent=`${score} / ${questions.length}`;if(questionIndex===questions.length&&score===questions.length)scoreMessage.textContent='Perfeito! Você conhece a história do Mengão!';else if(questionIndex===questions.length)scoreMessage.textContent='Quiz concluído! Continue conhecendo o Flamengo.';else if(score===0)scoreMessage.textContent='Cada pergunta é uma chance de aprender!';else scoreMessage.textContent='Você já acertou '+score+' pergunta(s)!'}
+    nextQuestion.addEventListener('click',()=>{if(!answered)return;if(questionIndex<questions.length-1){questionIndex++;renderQuestion()}else{questionNumber.textContent='DESAFIO CONCLUÍDO';questionText.textContent=score===questions.length?'NAÇÃO, VOCÊ É CRAQUE! 🏆':`Você acertou ${score} de ${questions.length} perguntas!`;answersContainer.replaceChildren();quizFeedback.textContent=score===questions.length?'Gabaritou! O orgulho rubro-negro está em dia!':'Continue aprendendo sobre a história do Mais Querido e tente de novo.';quizFeedback.style.color='#f5c86b';nextQuestion.textContent='Jogar novamente ↻';nextQuestion.disabled=false;nextQuestion.onclick=restartQuiz;questionIndex=questions.length;updateScore()}});
+    function restartQuiz(){questionIndex=0;score=0;nextQuestion.onclick=null;renderQuestion()}
+    renderQuestion();
+
+    // ===== MURAL =====
+    const wallForm=document.getElementById('wallForm'),wallList=document.getElementById('wallList'),STORAGE_KEY='flamengo-fan-wall-v1';
+    function readMessages(){try{const s=localStorage.getItem(STORAGE_KEY);const p=s?JSON.parse(s):[];return Array.isArray(p)?p.slice(0,20):[]}catch{return[]}}
+    function renderMessages(){const msgs=readMessages();wallList.replaceChildren();if(msgs.length===0){const e=document.createElement('p');e.textContent='O mural está esperando a primeira mensagem da Nação. 🔴⚫';e.style.color='#a99da2';wallList.appendChild(e);return}msgs.forEach(m=>{const c=document.createElement('article');c.className='wall-message';const n=document.createElement('strong');n.textContent='🔴⚫ '+m.name;const t=document.createElement('p');t.textContent=m.text;c.append(n,t);wallList.appendChild(c)})}
+    wallForm.addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('fanName').value.trim();const t=document.getElementById('fanMessage').value.trim();if(!n||!t){showToast('Preencha seu nome e sua mensagem.');return}const msgs=readMessages();msgs.unshift({name:n.slice(0,35),text:t.slice(0,180)});try{localStorage.setItem(STORAGE_KEY,JSON.stringify(msgs.slice(0,20)));renderMessages();wallForm.reset();showToast('Mensagem publicada neste dispositivo! 🔴⚫')}catch{showToast('Não foi possível salvar.')}});
+    renderMessages();
+    let toastTimeout;function showToast(msg){const toast=document.getElementById('toast');toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('show'),3000)}
+    const backTop=document.getElementById('backTop');window.addEventListener('scroll',()=>{backTop.classList.toggle('visible',window.scrollY>500)},{passive:true});backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    document.getElementById('currentYear').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
